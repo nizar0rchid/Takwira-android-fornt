@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:backgroundTint="@color/primary"
+    tools:context=".fragement.equipeDetailsFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/StadePic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="105dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="106dp"
+        android:scaleType="centerCrop"
+        app:civ_border_width="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/StadeName"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="56dp"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StadePic" />
+
+    <TextView
+        android:id="@+id/StadeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/StadeLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StadeName" />
+
+    <TextView
+        android:id="@+id/StadeLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StadeDate" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/usersRecycler"
+        android:layout_width="439dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/joinbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StadeLocation"
+        tools:listitem="@layout/activity_users_adapter" />
+
+    <Button
+        android:id="@+id/teamChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#5A0D67"
+        android:text="Team A"
+        app:layout_constraintBottom_toTopOf="@+id/usersRecycler"
+        app:layout_constraintEnd_toStartOf="@+id/teamChoice2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StadeLocation"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/teamChoice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#5A0D67"
+        android:text="Team B"
+        app:layout_constraintBottom_toTopOf="@+id/usersRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/teamChoice"
+        app:layout_constraintTop_toBottomOf="@+id/StadeLocation"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/joinbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF9800"
+        android:text="Join Team"
+        app:icon="@drawable/ic_baseline_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usersRecycler" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

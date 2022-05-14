@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inputty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ui.AddMatch">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutStadeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtStadeName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Stadium Name"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutStadeLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutStadeName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtStadeLocation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Location"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="221dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutStadePrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutStadeCapacity">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtStadePrice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Price"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="390dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutStadeCapacity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="20dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutStadeLocation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtStadeCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Capacity"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="306dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_view_date_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="test"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddStade"
+        app:layout_constraintEnd_toStartOf="@+id/button_date_1"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutStadePrice"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddStade"
+        android:layout_width="226dp"
+        android:layout_height="54dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="60dp"
+        android:text="Add Match"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_date_1" />
+
+    <Button
+        android:id="@+id/button_date_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="134dp"
+        android:layout_marginBottom="143dp"
+        android:backgroundTint="#673AB7"
+        android:text="Pick a date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtLayoutStadePrice"
+        app:layout_constraintVertical_bias="0.216" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

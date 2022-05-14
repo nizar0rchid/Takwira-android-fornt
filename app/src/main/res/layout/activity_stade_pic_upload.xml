@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ui.StadePicUpload">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="227dp"
+        android:text="Finish by uploading the stadium picture."
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvImage1"
+            android:layout_width="175dp"
+            android:layout_height="170dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="5dp"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivImage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@android:drawable/ic_menu_report_image">
+
+                </ImageView>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUploadstadepic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/cvImage1"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#FF5722"
+            android:text="Upload"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/pbLoading1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/btnUploadstadepic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_loading"
+            app:lottie_speed="3.75" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

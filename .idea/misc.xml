@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/drawable/join.xml" value="0.30364583333333334" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/drawable/plus.xml" value="0.3067708333333333" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_add_match.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_match_details.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_profile_pic_upload.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_stade_pic_upload.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/activity_users_adapter.xml" value="0.2879999900124293" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/card_stade.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/fragment_dashboard.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/fragment_home.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/fragment_notifications.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/layout/translucent_test.xml" value="0.15942028985507245" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
+        <entry key="..\:/Users/nizar/Desktop/kotlin_projects/Takwira/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
