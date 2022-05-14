@@ -36,10 +36,56 @@ import com.esprit.takwira.ui.home.recyclerViewStade
 import com.esprit.takwira.utis.ClickHandler
 import com.esprit.takwira.viewmodels.UsersViewModel
 import com.esprit.takwira.viewmodels.mainActitvityViewModel
+import com.sendbird.android.*
+import com.sendbird.android.SendBird.ConnectHandler
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.uikit.activities.ChannelActivity
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.uikit.fragments.OpenChannelFragment
+
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.uikit.activities.OpenChannelSettingsActivity
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.uikit.SendbirdUIKit
+import com.sendbird.uikit.activities.CreateChannelActivity
+import com.sendbird.android.SendBirdException
+
+import com.sendbird.android.SendBird
+
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.users
+
+import com.sendbird.android.GroupChannelParams
+
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class MatchDetails : AppCompatActivity() , ClickHandler {
@@ -53,6 +99,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
     lateinit var teambtn: Button
     lateinit var teambbtn: Button
     lateinit var joinbtn: Button
+    lateinit var chatbtn: Button
     var choice : String ="A"
     lateinit var mSharedPref: SharedPreferences
     var isjoined: Boolean = false
@@ -73,6 +120,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
         Location = findViewById(R.id.StadeLocation)
         teambtn = findViewById(R.id.teamChoice)
         teambbtn = findViewById(R.id.teamChoice2)
+        chatbtn = findViewById(R.id.btnchat)
 
         Name.text = stade?.name
         Date.text = stade?.DateTime
@@ -98,6 +146,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
         teambtn.setOnClickListener {
             choice = "A"
             initViewModel(1)
+
         }
         teambbtn.setOnClickListener {
             choice = "B"
@@ -106,6 +155,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
         if (isjoined == true) {
             joinbtn.visibility = View.GONE;
         }
+        chatbtn.setOnClickListener { chat() }
         joinbtn.setOnClickListener {
             if (choice.equals("A")) {
                 getMatch(this@MatchDetails, stade)
@@ -333,6 +383,28 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
     }
 
 
+
+    fun chat () {
+        mSharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        val userid = mSharedPref.getString("_ID",null)
+        //connect the user
+        SendbirdUIKit.connect { user, e ->
+            if (e != null) {
+                if (user != null) {
+                    // The user is offline but you can access user information stored in the local cache.
+                } else {
+                    // The user is offline and you can't access any user information stored in the local cache.
+                }
+            } else {
+                // The user is online and connected to the server.
+                val intent = ChannelActivity.newIntent(this@MatchDetails, stade._id.toString())
+                startActivity(intent)
+            }
+        }
+
+
+
+    }
 
 
 

@@ -20,6 +20,8 @@ import com.esprit.takwira.models.Stade
 import com.esprit.takwira.models.User
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.sendbird.android.GroupChannel
+import com.sendbird.android.GroupChannelParams
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -147,7 +149,7 @@ class AddMatch : AppCompatActivity() {
 
                     if (status == 200) {
                         Toast.makeText(this@AddMatch, "Please proceed to adding a picture !", Toast.LENGTH_LONG).show()
-
+                        createGroupChat(stade.name.toString(), stadeid)
                         navigate(stadeid.toString())
                     } else if (status != 200) {
                         Toast.makeText(this@AddMatch, "Some error occured !", Toast.LENGTH_LONG).show()
@@ -228,6 +230,26 @@ class AddMatch : AppCompatActivity() {
         return true
     }
 
+
+    private fun createGroupChat(stadename : String, stadeid : String) {
+        //create channel
+        val users: MutableList<String> = ArrayList()
+
+
+        val operators: MutableList<String> = ArrayList()
+
+        val params = GroupChannelParams()
+            .setPublic(true)
+            .setEphemeral(false)
+            .setDistinct(false)
+            .setSuper(false)
+            .setName(stadename)
+            .setChannelUrl(stadeid) // In a group channel, you can create a new channel by specifying its unique channel URL in a 'GroupChannelParams' object.
+
+
+        GroupChannel.createChannel(params
+        ) { groupChannel, p1 ->  };
+    }
 
 
 

@@ -151,4 +151,7 @@ class StadePicUpload : AppCompatActivity() {
         val mainIntent = Intent(this, MainActivity::class.java)
         startActivity(mainIntent)
     }
+
+
+
 }
