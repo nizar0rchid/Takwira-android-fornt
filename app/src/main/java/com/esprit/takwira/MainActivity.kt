@@ -1,6 +1,8 @@
 package com.esprit.takwira
 
+import android.Manifest
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.provider.UserDictionary.Words
 
@@ -37,6 +39,9 @@ import com.sendbird.android.SendBirdException
 import com.sendbird.android.handlers.InitResultHandler
 
 import android.provider.UserDictionary.Words.APP_ID
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 
 import com.sendbird.android.SendBird
 
@@ -53,7 +58,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var mSharedPref: SharedPreferences
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         mSharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         val userid = mSharedPref.getString("_ID",null)
         SendBird.init("3EB3B0C5-F80E-4DFA-B252-FAC0D44892AF", this@MainActivity, true, object : InitResultHandler {
@@ -157,6 +165,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }, this)
+        SendbirdUIKit.setDefaultThemeMode(SendbirdUIKit.ThemeMode.Dark);
 
         super.onCreate(savedInstanceState)
 
@@ -175,6 +184,7 @@ class MainActivity : AppCompatActivity() {
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
     override fun onBackPressed() {
         // Do Here what ever you want do on back press;

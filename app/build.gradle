@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
+
 }
 
 android {
@@ -67,6 +70,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation 'com.sendbird.sdk:uikit:3.0.0-beta.2'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
 
 

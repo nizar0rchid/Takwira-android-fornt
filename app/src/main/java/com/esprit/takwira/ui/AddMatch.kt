@@ -1,5 +1,6 @@
 package com.esprit.takwira.ui
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -44,6 +45,7 @@ class AddMatch : AppCompatActivity() {
     lateinit var txtStadePrice: TextInputEditText
     lateinit var txtLayoutStadePrice: TextInputLayout
 
+    lateinit var pickmap : Button
     lateinit var addmatchbtn : Button
 
     lateinit var mSharedPref: SharedPreferences
@@ -52,7 +54,9 @@ class AddMatch : AppCompatActivity() {
     var button_date: Button? = null
     var textview_date: TextView? = null
     var cal = Calendar.getInstance()
-
+    companion object {
+        const val START_ACTIVITY_3_REQUEST_CODE = 0
+    }
 
 
 
@@ -76,6 +80,12 @@ class AddMatch : AppCompatActivity() {
         txtLayoutStadePrice = findViewById(R.id.txtLayoutStadePrice)
 
         addmatchbtn = findViewById(R.id.btnAddStade)
+        pickmap = findViewById(R.id.pickLocationBtn)
+
+        pickmap.setOnClickListener {
+            val intent = Intent(this, mapChoice::class.java)
+            startActivityForResult(intent, START_ACTIVITY_3_REQUEST_CODE)
+        }
 
         textview_date!!.text = "--/--/----"
 
@@ -105,6 +115,25 @@ class AddMatch : AppCompatActivity() {
 
         addmatchbtn.setOnClickListener { addStade() }
     }
+
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == START_ACTIVITY_3_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                val longitude = data!!.getStringExtra("longitude")
+                val latitude = data!!.getStringExtra("latitude")
+                txtStadeLocation.setText(latitude+","+longitude)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+
+
+
+
     private fun updateDateInView() {
         val myFormat = "MM/dd/yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.FRANCE)

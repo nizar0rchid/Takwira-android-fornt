@@ -9,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 
 
 object RetrofitInstance {
-    var ip = "172.17.1.19"
+    var ip = "172.20.10.4"
     var BASE_URL = "http://"+ip+":3000/api/"
     fun api( context: Context?) :UserApi {
 

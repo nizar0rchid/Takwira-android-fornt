@@ -124,7 +124,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
 
         Name.text = stade?.name
         Date.text = stade?.DateTime
-        Location.text = stade?.location
+        Location.text = ""
         joinbtn = findViewById(R.id.joinbtn)
 
         recyclerViewUsers = findViewById(R.id.usersRecycler)

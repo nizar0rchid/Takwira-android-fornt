@@ -109,11 +109,12 @@ class LoginActivity : AppCompatActivity() {
                     val status = response.code()
                     Log.w("Code", status.toString())
                     //Log.w("Response", Gson().toJson(response))
-                    val jsonObject = JSONObject(Gson().toJson(response.body()))
-                    user._id = jsonObject.getString("_id").toString()
-                    Log.w("userID", user._id!!.toString())
+
 
                     if (status == 200) {
+                        val jsonObject = JSONObject(Gson().toJson(response.body()))
+                        user._id = jsonObject.getString("_id").toString()
+                        Log.w("userID", user._id!!.toString())
                         mSharedPref.edit().apply{
                             putString(ID, user._id!!.toString())
                         }.apply()
@@ -166,5 +167,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         return true
+    }
+
+    override fun onBackPressed() {
+        finishAffinity();
+        finish();
     }
 }

@@ -57,6 +57,10 @@ class StadeAdapter(val activity: Fragment,private  val clickHandler: ClickHandle
         this.stadeList = stadeList
     }
 
+    fun getStadeList() :List<Stade>? {
+        return this.stadeList
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StadeViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_stade, parent, false)

@@ -25,12 +25,13 @@ import retrofit2.Response
 
 class ProfileFragment : Fragment() {
     lateinit var profilename : TextView
-    lateinit var button: Button
     lateinit var email :  TextView
     lateinit var phone :  TextView
     lateinit var location :  TextView
     lateinit var imageView: ImageView
     lateinit var mSharedPref : SharedPreferences
+    lateinit var logoutbtn: Button
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +45,7 @@ class ProfileFragment : Fragment() {
         phone = rootView.findViewById(R.id.profilePhone)
         location = rootView.findViewById(R.id.profileLocation)
         imageView = rootView.findViewById(R.id.user_profile_photo)
+        logoutbtn = rootView.findViewById(R.id.logoutBtn)
 
         mSharedPref = requireActivity().getSharedPreferences(PREF_NAME, AppCompatActivity.MODE_PRIVATE)
         val idUser: String = mSharedPref.getString(ID, null).toString()
@@ -76,6 +78,11 @@ class ProfileFragment : Fragment() {
 
 
         })
+
+        logoutbtn.setOnClickListener {
+            requireActivity().getSharedPreferences(PREF_NAME, AppCompatActivity.MODE_PRIVATE).edit().clear().apply()
+            requireActivity().finish()
+        }
 
         return rootView
     }

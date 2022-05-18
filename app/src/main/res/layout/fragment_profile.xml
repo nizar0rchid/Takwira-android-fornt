@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -39,6 +40,15 @@
             android:elevation="4dp"
             android:paddingBottom="24dp">
 
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF5722"
+                android:text="Logout"
+                app:icon="@drawable/ic_baseline_login_24"
+                app:iconPadding="0dp" />
 
             <TextView
                 android:id="@+id/user_profile_name"
@@ -97,5 +107,6 @@
                 android:text="Loading" />
 
         </LinearLayout>
+
     </RelativeLayout>
 </ScrollView>
