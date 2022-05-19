@@ -68,6 +68,18 @@ import com.sendbird.android.constant.StringSet.core
 import com.sendbird.android.constant.StringSet.core
 import com.sendbird.android.constant.StringSet.core
 import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.GroupChannel
+import com.sendbird.android.GroupChannel.GroupChannelGetHandler
+import com.sendbird.android.GroupChannel.GroupChannelJoinHandler
+
+import com.sendbird.android.constant.StringSet.core
+import com.sendbird.android.constant.StringSet.core
+
+
+
+
+
+
 
 
 
@@ -236,8 +248,7 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
         viewModel.makeApiCall2(this@MatchDetails)
     }
     override fun onBackPressed() {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
     }
 
     override fun ClickItem(position: Int) {
@@ -397,14 +408,37 @@ class MatchDetails : AppCompatActivity() , ClickHandler {
                 }
             } else {
                 // The user is online and connected to the server.
-                val intent = ChannelActivity.newIntent(this@MatchDetails, stade._id.toString())
-                startActivity(intent)
+                GroupChannel.getChannel(
+                    stade._id.toString()
+                ) { groupChannel, e ->
+                    if (e != null) {
+                        // Handle error.
+                    }
+
+                    // Through the "groupChannel" parameter of the onResult() callback method,
+                    // the group channel object identified with the CHANNEL_URL is returned by Sendbird server,
+                    // and you can get the group channel's data from the result object.
+                    val channelName = groupChannel.name
+                    if (groupChannel.isPublic) {
+                        groupChannel.join { e ->
+                            if (e != null) {
+                                // Handle error.
+                            }
+                            val intent = ChannelActivity.newIntent(this@MatchDetails, stade._id.toString())
+                            startActivity(intent)
+                        }
+                    }
+                }
+
+
             }
         }
 
 
 
     }
+
+
 
 
 
